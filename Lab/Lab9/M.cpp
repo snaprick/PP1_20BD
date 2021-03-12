@@ -10,17 +10,20 @@ typedef vector<bool> vb;
 
 
 void solve(){
-vector<pair<int, int>> v;
+queue<string> q;
 int n;
 cin >> n;
-for(int i = 1; i <= n; i++){
-    int x, y;
-    cin >> x >> y;
-    v.push_back(make_pair(x,y));
-}
-sort(all(v));
-for(auto i : v){
-    cout << i.first << " " << i.second << "\n";
+fr(i, n){
+    int x;
+    cin >> x;
+    if(x == 2) q.pop();
+    else{
+        string s;
+        cin >> s;
+        q.push(s);
+    }
+    if(!q.empty()) cout << q.front() << "\n";
+    else cout << "queue is empty\n";
 }
 }
 

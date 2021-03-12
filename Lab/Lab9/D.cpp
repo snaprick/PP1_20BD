@@ -10,18 +10,21 @@ typedef vector<bool> vb;
 
 
 void solve(){
-vector<pair<int, int>> v;
-int n;
-cin >> n;
-for(int i = 1; i <= n; i++){
-    int x, y;
-    cin >> x >> y;
-    v.push_back(make_pair(x,y));
+int n, k;
+cin >> n >> k;
+vi v;
+map<int, int> mp;
+fr(i, n){
+    int x;
+    cin >> x;
+    v.pb(x);
+    mp[i] = v[i];
 }
-sort(all(v));
-for(auto i : v){
-    cout << i.first << " " << i.second << "\n";
+int cnt = 0;
+for(auto i : mp){
+    if(i.second == k) cnt++;
 }
+cout << cnt;
 }
 
 

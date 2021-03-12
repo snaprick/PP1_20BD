@@ -12,5 +12,5 @@ int main()
         cin >> s >> m;
         a[s]=m;
     }
-    sort(m.begin(),)
+    sort(a.begin(),a.end());
 }

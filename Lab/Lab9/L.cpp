@@ -10,18 +10,17 @@ typedef vector<bool> vb;
 
 
 void solve(){
-vector<pair<int, int>> v;
+pair<int, int> p[1000];
 int n;
 cin >> n;
-for(int i = 1; i <= n; i++){
+fr(i, n){
     int x, y;
     cin >> x >> y;
-    v.push_back(make_pair(x,y));
+    p[i].first = x + y;
+    p[i].second = i + 1;
 }
-sort(all(v));
-for(auto i : v){
-    cout << i.first << " " << i.second << "\n";
-}
+sort(p, p+n);
+fr(i, n) cout << p[i].second << " ";
 }
 
 

@@ -10,18 +10,15 @@ typedef vector<bool> vb;
 
 
 void solve(){
-vector<pair<int, int>> v;
-int n;
-cin >> n;
-for(int i = 1; i <= n; i++){
-    int x, y;
-    cin >> x >> y;
-    v.push_back(make_pair(x,y));
+string s;
+cin >> s;
+int cnt1 = 0, cnt2 = 0;
+fr(i, s.size()){
+    if(s[i] == '(') cnt1++;
+    else cnt2++;
 }
-sort(all(v));
-for(auto i : v){
-    cout << i.first << " " << i.second << "\n";
-}
+if(cnt1 == cnt2) cout << "YES";
+else cout << "NO";
 }
 
 
